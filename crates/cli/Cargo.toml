@@ -1,0 +1,27 @@
+[package]
+name = "ku-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+include = ["src/**", "Cargo.toml", "LICENSE"]
+description = "Play, solve, generate, and visualize Sudoku puzzles"
+default-run = "ku"
+
+[lints]
+workspace = true
+
+[dependencies]
+ku-core = { path = "../core", version = "0.1.0" }
+ku-solvers = { path = "../solvers", version = "0.1.0" }
+ku-session = { path = "../session", version = "0.1.0" }
+anyhow.workspace = true
+clap.workspace = true
+ratatui.workspace = true
+ratatui-themes.workspace = true
+ureq.workspace = true
+
+[[bin]]
+name = "ku"
+path = "src/main.rs"

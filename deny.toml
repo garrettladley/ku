@@ -1,0 +1,20 @@
+[advisories]
+version = 2
+
+[licenses]
+version = 2
+allow = ["MIT", "Apache-2.0", "Unicode-3.0", "ISC", "BSD-3-Clause"]
+# Narrow exceptions for Ratatui's hasher and Rustls's Mozilla root certificates.
+# CDLA requires its license text to accompany redistributed certificate data.
+exceptions = [
+    { name = "foldhash", version = "=0.2.0", allow = ["Zlib"] },
+    { name = "webpki-roots", version = "=1.0.9", allow = ["CDLA-Permissive-2.0"] },
+]
+
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
