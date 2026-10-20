@@ -1,0 +1,34 @@
+[package]
+name = "ku-solvers"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+include = ["src/**", "Cargo.toml", "LICENSE"]
+description = "Sudoku search strategies, registry, and uniqueness-checked generation"
+
+[lints]
+workspace = true
+
+[dependencies]
+ku-core = { path = "../core", version = "0.1.0" }
+rand.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+allocation-counter = "0.8.1"
+rayon.workspace = true
+
+[[bench]]
+name = "solve"
+harness = false
+
+[[bench]]
+name = "batch"
+harness = false
+
+[[bench]]
+name = "edge_cases"
+harness = false
